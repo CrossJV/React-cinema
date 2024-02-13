@@ -18,8 +18,30 @@ body {
   display: flex;
   min-height: 100vh;
   background: #121829;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
   padding: 0 120px;
+  margin-top: 80px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
 }
