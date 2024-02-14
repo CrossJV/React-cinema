@@ -6,3 +6,12 @@
     margin-bottom: 24px;
     width: 588px;
 }
+
+.film-name {
+    color: rgb(235, 238, 245);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 16px;
+}

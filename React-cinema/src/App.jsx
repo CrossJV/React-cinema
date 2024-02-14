@@ -75,7 +75,7 @@ function App() {
 				/>
 				<Paragraph 
 					text={'Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.'}
-					type={'regular-paragraph'}
+					className={'regular-paragraph'}
 				/>
 				<SearchFrom />
 				<FilmList data={DATA_MOCKS} />

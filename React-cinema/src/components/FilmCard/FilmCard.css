@@ -45,38 +45,9 @@
     height: 400px;
 }
 
-.film-name {
-    color: rgb(235, 238, 245);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: left;
-    margin-bottom: 16px;
-}
 
-.favorites {
-    color: rgb(123, 110, 246);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: left;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    padding: 0;
-    padding-left: 32px;
-    background: url('../../../public/like.svg') no-repeat;
-}
 
 .description-wrapper {
     padding: 8px;
     align-self: flex-start;
-}
-
-.succes {
-    color: #37D8A7;
-    background: url('../../../public/favorite.svg') no-repeat;
 }

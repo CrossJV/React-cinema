@@ -1,8 +1,8 @@
 import './Paragraph.css';
 
-function Paragraph({ text, type }) {
+function Paragraph({ text, className }) {
 	return (
-		<p className={ type }>{ text }</p>
+		<p className={ className }>{ text }</p>
 	);
 }
 

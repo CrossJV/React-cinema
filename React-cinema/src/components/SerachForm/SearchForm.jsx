@@ -16,6 +16,7 @@ function SearchFrom() {
 			<Button 
 				name={'Искать'}
 				onClick={() => {console.log('Искать');}}
+				className={'regular-button'}
 			/>
 		</form>
 	);
