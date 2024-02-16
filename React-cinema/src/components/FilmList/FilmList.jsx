@@ -1,4 +1,4 @@
-import './FilmList.css';
+import styles from './FilmList.module.css';
 import FilmCard from '../FilmCard/FilmCard';
 
 function FilmList({ data }) {
@@ -8,7 +8,7 @@ function FilmList({ data }) {
 		);
 	});
 	return (
-		<ul className='film-list'>
+		<ul className={styles['film-list']}>
 			{list}
 		</ul>
 	);

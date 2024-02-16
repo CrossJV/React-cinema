@@ -1,8 +1,8 @@
-import './Headler.css';
+import styles from './Headler.module.css';
 
 function Headler({ title, type }) {
 	return (
-		<h1 className={ type }>{title}</h1>
+		<h1 className={ styles[type] }>{title}</h1>
 	);
 }
 

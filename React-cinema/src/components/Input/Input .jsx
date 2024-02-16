@@ -1,7 +1,8 @@
-import './Input.css';
+import styles from './Input.module.css';
+import cn from 'classnames';
 
 function Input({ className }) {
-	const cl = 'input ' + className ? 'input ' + className : 'input';
+	const cl = className ? cn(styles.input, styles[className]) : styles.input;
 	const placeholder = className === 'search' ? 'Введите название' : 'Ваше имя';
     
 	return (

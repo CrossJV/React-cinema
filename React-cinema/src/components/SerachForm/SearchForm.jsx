@@ -1,4 +1,4 @@
-import './SearchForm.css';
+import styles from './SearchForm.module.css';
 import Input from '../Input/Input ';
 import Button from '../Button/Button';
 
@@ -9,7 +9,7 @@ function SearchFrom() {
 	};
 
 	return (
-		<form className='search-form' action="#" onSubmit={formHandler}>
+		<form className={styles['search-form']} action="#" onSubmit={formHandler}>
 			<Input 
 				className={'search'}
 			/>
