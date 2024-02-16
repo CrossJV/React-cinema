@@ -9,26 +9,3 @@
     padding: 16px 32px;
     cursor: pointer;
 }
-
-.succes,
-.favorites {
-    color: rgb(123, 110, 246);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: left;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    padding: 0;
-    padding-left: 32px;
-    background: url('../../../public/like.svg') no-repeat;
-}
-
-.succes {
-    color: #37D8A7;
-    background: url('../../../public/favorite.svg') no-repeat;
-}

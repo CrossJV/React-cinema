@@ -1,10 +1,9 @@
-import Button from '../Button/Button';
+import Favorite from '../Favorite/Favorite';
 import Paragraph from '../Paragraph/Paragraph';
 import styles from './FilmCard.module.css';
 
 function FilmCard({ data }) {
-	const favorites = data.favorites ? 'В избранном' : 'В избранное';
-	const cl = data.favorites ? 'succes' : 'favorites';
+	
 
 	return (
 		<li className={styles['film-card']}>
@@ -17,10 +16,9 @@ function FilmCard({ data }) {
 					text={data.name}
 					className={'film-name'}
 				/>
-				<Button 
-					name={favorites}
+				<Favorite 
+					success={data.favorites}
 					onClick={() => console.log('favorite push')}
-					className={cl}
 				/>
 			</div>
 		</li>

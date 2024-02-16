@@ -2,7 +2,7 @@ import './App.css';
 import FilmList from './components/FilmList/FilmList';
 import Headler from './components/Headler/Headler';
 import Paragraph from './components/Paragraph/Paragraph';
-import SearchFrom from './components/SerachForm/SearchForm';
+import SearchFrom from './components/SerachForm/Search';
 import Header from './layouts/Header/Header';
 
 const DATA_MOCKS = [
@@ -70,7 +70,7 @@ function App() {
 			<Header />
 			<main>
 				<Headler 
-					type={'regular-headler'}
+					className={'regular-headler'}
 					title={'Поиск'}
 				/>
 				<Paragraph 
