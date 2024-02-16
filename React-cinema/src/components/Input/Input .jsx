@@ -1,11 +1,8 @@
 import './Input.css';
 
-function Input({ className }) {
-	const cl = 'input ' + className ? 'input ' + className : 'input';
-	const placeholder = className === 'search' ? 'Введите название' : 'Ваше имя';
-    
+function Input({ className, placeholder }) {
 	return (
-		<input className={cl} placeholder={placeholder} type="text" />
+		<input className={`input ${className || ''}`} placeholder={placeholder} type="text" />
 	);
 }
 

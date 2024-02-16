@@ -1,8 +1,8 @@
 import './Headler.css';
 
-function Headler({ title, type }) {
+function Headler({ title, className }) {
 	return (
-		<h1 className={ type }>{title}</h1>
+		<h1 className={ className }>{title}</h1>
 	);
 }
 

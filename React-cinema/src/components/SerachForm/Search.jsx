@@ -1,8 +1,8 @@
-import './SearchForm.css';
+import './Search.css';
 import Input from '../Input/Input ';
 import Button from '../Button/Button';
 
-function SearchFrom() {
+function Search() {
 	const formHandler = (evt) => {
 		evt.preventDefault();
 		console.log('search');
@@ -12,9 +12,10 @@ function SearchFrom() {
 		<form className='search-form' action="#" onSubmit={formHandler}>
 			<Input 
 				className={'search'}
+				placeholder={'Искать'}
 			/>
 			<Button 
-				name={'Искать'}
+				label={'Искать'}
 				onClick={() => {console.log('Искать');}}
 				className={'regular-button'}
 			/>
@@ -22,4 +23,4 @@ function SearchFrom() {
 	);
 }
 
-export default SearchFrom;
+export default Search;
