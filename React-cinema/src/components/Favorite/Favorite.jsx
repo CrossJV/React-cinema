@@ -1,11 +1,10 @@
 import './Favorite.css';
 
-function Favorite({ success, onClick })
-{
-	const label = success ? 'В избранном' : 'В избранное';
+function Favorite({ isFavorite, onClick }) {
+	const label = isFavorite ? 'В избранном' : 'В избранное';
 
 	return (
-		<button onClick={onClick} className={`favorites ${success ? 'success' : ''}`}>{label}</button>
+		<button onClick={onClick} className={`favorites ${isFavorite ? 'success' : ''}`}>{label}</button>
 	);
 }
 

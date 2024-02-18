@@ -3,8 +3,6 @@ import Paragraph from '../Paragraph/Paragraph';
 import styles from './FilmCard.module.css';
 
 function FilmCard({ data }) {
-	
-
 	return (
 		<li className={styles['film-card']}>
 			<div className={styles['poster-wrapper']}>
@@ -17,7 +15,7 @@ function FilmCard({ data }) {
 					className={'film-name'}
 				/>
 				<Favorite 
-					success={data.favorites}
+					isFavorite={data.favorites}
 					onClick={() => console.log('favorite push')}
 				/>
 			</div>
