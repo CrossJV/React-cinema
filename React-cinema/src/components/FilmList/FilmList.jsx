@@ -2,8 +2,7 @@ import styles from './FilmList.module.css';
 import FilmCard from '../FilmCard/FilmCard';
 
 function FilmList({ data }) {
-	if(!data.length)
-	{
+	if(!data.length) {
 		return <p>Фильмов не найдено</p>;
 	}
 	return (

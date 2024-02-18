@@ -1,9 +1,9 @@
 import './App.css';
 import FilmList from './components/FilmList/FilmList';
-import Headler from './components/Headler/Headler';
-import Paragraph from './components/Paragraph/Paragraph';
-import SearchFrom from './components/SerachForm/Search';
+import Search from './components/Search/Search';
 import Header from './layouts/Header/Header';
+import Auth from './components/Auth/Auth';
+import { UserContextProvider } from './contexts/user.context';
 
 const DATA_MOCKS = [
 	{
@@ -66,21 +66,16 @@ const DATA_MOCKS = [
 
 function App() {
 	return (
-		<>
-			<Header />
-			<main>
-				<Headler 
-					className={'regular-headler'}
-					title={'Поиск'}
-				/>
-				<Paragraph 
-					text={'Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.'}
-					className={'regular-paragraph'}
-				/>
-				<SearchFrom />
-				<FilmList data={DATA_MOCKS} />
-			</main>
-		</>
+		<UserContextProvider>
+			<div className='app'>
+				<Header />
+				<main>
+					<Search />
+					<FilmList data={DATA_MOCKS} />
+					<Auth />
+				</main>
+			</div>
+		</UserContextProvider>
 	);
 }
 

@@ -1,11 +1,16 @@
-import './Favorite.css';
+import { forwardRef } from 'react';
+import styles from './Favorite.module.css';
+import cn from 'classnames';
 
-function Favorite({ isFavorite, onClick }) {
+const Favorite = forwardRef (function Favorite({ isFavorite, onClick }, ref)
+{
 	const label = isFavorite ? 'В избранном' : 'В избранное';
 
 	return (
-		<button onClick={onClick} className={`favorites ${isFavorite ? 'success' : ''}`}>{label}</button>
+		<button ref={ref} onClick={onClick} className={cn(styles['favorites'], {
+			[styles['is-favorite']]: isFavorite
+		} )}>{label}</button>
 	);
-}
+});
 
 export default Favorite;

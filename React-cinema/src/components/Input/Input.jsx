@@ -1,10 +1,11 @@
+import { forwardRef } from 'react';
 import styles from './Input.module.css';
 import cn from 'classnames';
 
-function Input({ className, placeholder }) {
+const Input = forwardRef (function Input({ className, placeholder, ...props }, ref) {
 	return (
-		<input className={cn(styles['input'], styles[className])}  placeholder={placeholder} type="text" />
+		<input {...props} ref={ref} className={cn(styles['input'], styles[className])}  placeholder={placeholder} type="text" />
 	);
-}
+});
 
 export default Input;
