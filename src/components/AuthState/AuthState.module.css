@@ -7,6 +7,7 @@
     gap: 16px;
 }
 
+.auth-state-toggler,
 .nav-header-link {
     color: rgb(168, 174, 191);
     font-size: 16px;
@@ -18,6 +19,7 @@
     align-items: center;
     gap: 8px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-header-link:hover {
@@ -27,3 +29,4 @@
 .login-icon {
     width: 24px;
 }
+

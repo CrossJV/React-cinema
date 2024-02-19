@@ -1,4 +1,4 @@
-import Authorization from '../AuthNav/AuthNav';
+import AuthState from '../AuthState/AuthState';
 import styles from './Navbar.module.css';
 
 function Navbar() {
@@ -6,7 +6,7 @@ function Navbar() {
 		<nav className={styles['nav-header']}>
 			<a className={styles['nav-header-link']} href="#">Поиск фильмов</a>
 			<a className={styles['nav-header-link']} href="#">Мои фильмы</a>
-			<Authorization />
+			<AuthState />
 		</nav>
 	);
 }
