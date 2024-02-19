@@ -17,28 +17,6 @@
     margin-bottom: 16px;
 }
 
-.rating {
-    position: absolute;
-    min-width: 65px;
-    height: 32px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 4px 8px 4px 36px;
-    border-radius: 8px;
-    backdrop-filter: blur(8px);
-    background: url('../../../public/star.svg') no-repeat 9.3px 9.3px, rgba(0, 0, 0, 0.65);
-    color: rgb(255, 189, 109);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-    box-sizing: border-box;
-    top: 8px;
-    left: 8px;
-}
-
 .poster-image {
     border-radius: 8px;
     width: 266px;
