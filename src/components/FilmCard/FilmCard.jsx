@@ -7,8 +7,8 @@ function FilmCard({ data }) {
 	return (
 		<li className={styles['film-card']}>
 			<div className={styles['poster-wrapper']}>
-				{data.rating ? <Rating rating={data.rating} /> : ''}
-				<img className={styles['poster-image']} src={data.poster || ''} alt={data.name || ''} />
+				{!!data.rating && <Rating rating={data.rating} />}
+				<img className={styles['poster-image']} src={data.poster || '/no_image.svg'} alt={data.name || 'no_image'} />
 			</div>
 			<div className={styles['description-wrapper']}>
 				<Paragraph 
