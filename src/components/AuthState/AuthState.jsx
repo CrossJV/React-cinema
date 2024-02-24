@@ -17,8 +17,7 @@ function AuthState() {
 		<>
 			{user && <a className={styles['nav-header-link']} href="#">{user.name}</a>}
 			<div onClick={auth} className={styles['auth-state-toggler']}>
-				{user && 'Выйти'}
-				{!user && <>Войти<img className='login-icon' src="/public/login_arrow.svg" alt="Login" /></>}
+				{user ? 'Выйти' : <>Войти<img className='login-icon' src="/public/login_arrow.svg" alt="Login" /></>}
 			</div>
 		</>
 	);
