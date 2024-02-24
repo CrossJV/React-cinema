@@ -1,0 +1,32 @@
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+}
+
+.auth-state-toggler,
+.nav-header-link {
+    color: rgb(168, 174, 191);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 2%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-header-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.login-icon {
+    width: 24px;
+}
+
