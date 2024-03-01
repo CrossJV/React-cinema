@@ -1,29 +1,30 @@
 import styles from './Auth.module.css';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
-import Headler from '../Headler/Headler';
-import { useContext, useState } from 'react';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
+import Headler from '../../components/Headler/Headler';
+import { BaseSyntheticEvent, useContext, useState } from 'react';
 import { UserContext } from '../../contexts/user.context';
+import { useNavigate } from 'react-router-dom';
 
 function Auth() {
 	const {0: userName, 1: setUserName} = useState('');
+	const navigate = useNavigate();
 	const {setUser} = useContext(UserContext);
-	const formHandler = (evt) => {
+	
+	const formHandler = (evt: BaseSyntheticEvent) => {
 		evt.preventDefault();
 		setUser(userName);
+		navigate('/');
 	};
 
-	const change = (evt) => {
+	const change = (evt: BaseSyntheticEvent) => {
 		setUserName(evt.target.value);
 		console.log(userName);
 	};
     
 	return(
 		<>
-			<Headler 
-				className={'regular-headler'}
-				title={'Вход'}
-			/>
+			<Headler className={'regular-headler'}>Вход</Headler>
 			<form className={styles['auth-form']} action="#" onSubmit={formHandler}>
 				<Input 
 					placeholder={'Ваше имя'}
@@ -33,9 +34,7 @@ function Auth() {
 					type={'text'}
 				/>
 				<Button 
-					label={'Войти в профиль'}
-					className={'regular-button'}
-				/>
+					className={'regular-button'}>Войти в профиль</Button>
 			</form>
 		</>
         

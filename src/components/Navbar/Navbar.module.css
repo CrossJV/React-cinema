@@ -27,3 +27,7 @@
 .login-icon {
     width: 24px;
 }
+
+.link-active {
+    color: rgb(255, 255, 255);
+}

@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 function Header() {
 	return (
 		<header className={styles['main-header']}>
-			<img className={styles['logo-header']} src="/public/header_logo.svg" alt="Logo" />
+			<img className={styles['logo-header']} src="/header_logo.svg" alt="Logo" />
 			<Navbar />
 		</header>
 	);
