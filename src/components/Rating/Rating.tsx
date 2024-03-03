@@ -1,8 +1,10 @@
 import styles from './Rating.module.css';
+import { RatingProps } from './Rating.props';
 
-function Rating(rating: number) {
+function Rating(props: RatingProps) {
+
 	return (
-		<span className={styles['rating']}>{rating}</span>
+		<span className={styles['rating']}>{props.rating}</span>
 	);
 }
 

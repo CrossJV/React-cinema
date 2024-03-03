@@ -1,4 +1,4 @@
-export interface FilmCardProps  {
+export interface FilmCardProps {
     id: number,
     rating?: number,
     poster?: string,
