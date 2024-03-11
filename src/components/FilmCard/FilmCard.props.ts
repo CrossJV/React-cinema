@@ -1,8 +1,7 @@
 export interface FilmCardProps {
-    id: number,
-    rating?: number,
-    poster?: string,
-    name?: string,
-    favorites?: boolean,
-    key: number
+    id: number
+    name: string
+    rating: number
+    poster: string
+    favorites: boolean
 }

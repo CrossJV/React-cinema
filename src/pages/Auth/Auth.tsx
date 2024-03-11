@@ -7,13 +7,13 @@ import { UserContext } from '../../contexts/user.context';
 import { useNavigate } from 'react-router-dom';
 
 function Auth() {
-	const {0: userName, 1: setUserName} = useState('');
+	const [userName, setUserName] = useState('');
 	const navigate = useNavigate();
-	const {setUser} = useContext(UserContext);
+	const { setUser } = useContext(UserContext);
 	
 	const formHandler = (evt: BaseSyntheticEvent) => {
 		evt.preventDefault();
-		setUser(userName);
+		setUser && setUser(userName);
 		navigate('/');
 	};
 

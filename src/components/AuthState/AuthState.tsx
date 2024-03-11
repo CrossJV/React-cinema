@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 function AuthState() {
 	const { user, setUser } = useContext(UserContext);
 	const navigate = useNavigate();
-    
+
 	const auth = () => {
-		if(user.name) {
-			setUser(user.name);
+		if(user) {
+			setUser && setUser(user.name);
 		} else {
 			navigate('/auth');
 		}

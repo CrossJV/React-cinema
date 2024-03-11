@@ -1,7 +1,7 @@
 import FilmList from "../../components/FilmList/FilmList";
 import Search from "../../components/Search/Search";
 
-const DATA_MOCKS = [
+const data = [
 	{
 		id: 1,
 		name: 'Black Widow',
@@ -65,7 +65,7 @@ function Main() {
     return (
         <>
             <Search />
-            <FilmList data={DATA_MOCKS} />
+            <FilmList data={data} />
         </>
     );
 }

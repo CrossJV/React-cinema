@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { UserProps } from './User.props';
 
-export function useAuth()
-{
-	const {0: user, 1: setUser} = useState('');
+export function useAuth() {
+	const [user, setUser] = useState(null);
 
 	useEffect(() => {
 		const data = JSON.parse(localStorage.getItem('users')!);
@@ -20,17 +19,17 @@ export function useAuth()
 		}
 	}, []);
     
-	const auth = ((userName: string) => {
+	const auth = ((userInput: string) => {
 		const data = JSON.parse(localStorage.getItem('users')!);
 
 		if(data)
 		{
-			const index = data.findIndex((user: UserProps) => user.name === userName);
+			const index = data.findIndex((user: UserProps) => user.name === userInput);
 
 			if(user)
 			{
 				data[index].isLogined = false;
-				setUser('');
+				setUser(null);
 			} else {
 				data[index].isLogined = true;
 				setUser(data[index]);
@@ -40,5 +39,5 @@ export function useAuth()
 		}
 	});
 
-	return [user, auth];
+	return [user, auth] as const;
 }
