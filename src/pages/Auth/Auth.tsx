@@ -19,7 +19,6 @@ function Auth() {
 
 	const change = (evt: BaseSyntheticEvent) => {
 		setUserName(evt.target.value);
-		console.log(userName);
 	};
     
 	return(

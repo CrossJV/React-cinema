@@ -8,6 +8,7 @@ import Auth from './pages/Auth/Auth.tsx';
 import Favorites from './pages/Favorites/Favorites.tsx';
 import Film from './pages/Film/Film.tsx';
 import Error from './pages/Error/Error.tsx';
+import { AuthLayout } from './layouts/Auth/AuthLayout.tsx';
 
 const router = createBrowserRouter([
 	{
@@ -16,19 +17,19 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <Main />
+				element: <AuthLayout><Main /></AuthLayout>
+			},
+			{
+				path: '/favorites',
+				element: <AuthLayout><Favorites /></AuthLayout>
+			},
+			{
+				path: '/film/:id',
+				element: <AuthLayout><Film /></AuthLayout>
 			},
 			{
 				path: '/auth',
 				element: <Auth />
-			},
-			{
-				path: '/favorites',
-				element: <Favorites />
-			},
-			{
-				path: '/film/:id',
-				element: <Film />
 			},
 			{
 				path: '*',
