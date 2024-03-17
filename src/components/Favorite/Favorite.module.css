@@ -12,10 +12,10 @@
     outline: none;
     padding: 0;
     padding-left: 32px;
-    background: url('../../../public/like.svg') no-repeat;
+    background: url('/like.svg') no-repeat;
 }
 
 .is-favorite {
     color: #37D8A7;
-    background: url('../../../public/favorite.svg') no-repeat;
+    background: url('/favorite.svg') no-repeat;
 }

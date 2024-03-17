@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: #121829;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,10 +15,12 @@
 
 body {
   margin: 0;
-  display: flex;
   min-height: 100vh;
   background: #121829;
   font-family: "Poppins", sans-serif;
+  min-width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 main {
@@ -44,4 +46,8 @@ p {
 h1 {
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
 }

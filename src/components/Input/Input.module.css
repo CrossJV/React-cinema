@@ -25,6 +25,6 @@
 }
 
 .search {
-    background: url('/public/search.svg') no-repeat 20px 16px, rgba(0, 0, 0, 0.1);
+    background: url('/search.svg') no-repeat 20px 16px, rgba(0, 0, 0, 0.1);
     padding-left: 56px;
 }
