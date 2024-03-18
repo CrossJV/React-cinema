@@ -1,10 +1,20 @@
-import { useParams } from "react-router-dom";
+import { Await, useLoaderData } from "react-router-dom";
+import { FilmCardProps } from "../../components/FilmCard/FilmCard.props";
+import { Suspense } from "react";
 
 function Film() {
-    const { id } = useParams();
+    const data = useLoaderData() as {data: FilmCardProps}
 
     return (
-        <>Film - {id}</>
+        <>
+            <Suspense fallback={<>Загрузка...</>}>
+                <Await resolve={data.data}>
+                    {({data}: {data: FilmCardProps}) => (
+                        <>Film - {data["#TITLE"]}</>
+                    )}
+                </Await>
+            </Suspense>
+        </>
     );
 }
 

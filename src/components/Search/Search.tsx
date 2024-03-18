@@ -3,14 +3,9 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import Headler from '../Headler/Headler';
 import Paragraph from '../Paragraph/Paragraph';
-import { BaseSyntheticEvent } from 'react';
+import { FormEventHandler } from 'react';
 
-function Search() {
-	const formHandler = (evt: BaseSyntheticEvent) => {
-		evt.preventDefault();
-		console.log('search');
-	};
-
+function Search({ formHandler }: {formHandler: FormEventHandler<HTMLFormElement>}) {
 	return (
 		<>
 			<Headler className={'regular-headler'}>Поиск</Headler>

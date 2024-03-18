@@ -12,7 +12,7 @@ function FilmList({ data }: FilmListProps) {
 		<ul className={styles['film-list']}>
 			{data.map((elem: FilmCardProps) => {
 				return (
-					<FilmCard {...elem} id={Number(elem.id)} key={Number(elem.id)}/>
+					<FilmCard {...elem} key={elem['#IMDB_ID']}/>
 				);
 			})}
 		</ul>
