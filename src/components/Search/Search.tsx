@@ -17,7 +17,6 @@ function Search({ formHandler }: {formHandler: FormEventHandler<HTMLFormElement>
 					name={'search'}
 				/>
 				<Button 
-					onClick={() => {console.log('Искать');}}
 					className={'regular-button'}
 				>Искать</Button>
 			</form>
