@@ -1,12 +1,11 @@
-import { ReactNode, useContext } from "react";
-import { UserContext } from "../../contexts/user.context";
-import { Navigate } from "react-router";
+import Auth from "../../pages/Auth/Auth";
 
-export const AuthLayout = ({ children }: {children: ReactNode}) => {
-    const { user } = useContext(UserContext);
-
-    if(!user) {
-        return <Navigate to='/auth' replace />
-    }
-    return children;
+function AuthLayout() {
+    return (
+        <>
+            <Auth />
+        </>
+    );
 }
+
+export default AuthLayout;

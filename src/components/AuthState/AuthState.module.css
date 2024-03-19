@@ -7,6 +7,7 @@
     gap: 16px;
 }
 
+a,
 .auth-state-toggler,
 .nav-header-link {
     color: rgb(168, 174, 191);
