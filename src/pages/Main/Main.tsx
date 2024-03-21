@@ -1,7 +1,5 @@
-import { BaseSyntheticEvent, useState } from "react";
 import FilmList from "../../components/FilmList/FilmList";
 import Search from "../../components/Search/Search";
-import axios from "axios";
 
 // const data = [
 // 	{
@@ -64,22 +62,10 @@ import axios from "axios";
 
 
 function Main() {
-	const [films, setFilms] = useState([]);
-
-	const getFilms = async (evt: BaseSyntheticEvent) => {
-		evt.preventDefault();
-		try {
-			const { data } = await axios.get(`https://search.imdbot.workers.dev/?q=${evt.target.search.value}`);
-			setFilms(data.description);
-		} catch(e) {
-			console.error(e);
-		}
-	};
-
     return (
         <>
-            <Search formHandler={getFilms} />
-            <FilmList data={films} />
+            <Search />
+            <FilmList />
         </>
     );
 }

@@ -3,13 +3,13 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import Headler from '../../components/Headler/Headler';
 import { BaseSyntheticEvent, useContext, useState } from 'react';
-import { UserContext } from '../../contexts/user.context';
+import { MainContext } from '../../contexts/main.context';
 import { useNavigate } from 'react-router-dom';
 
 function Auth() {
 	const [userName, setUserName] = useState('');
 	const navigate = useNavigate();
-	const { setUser } = useContext(UserContext);
+	const { setUser } = useContext(MainContext);
 	
 	const formHandler = (evt: BaseSyntheticEvent) => {
 		evt.preventDefault();

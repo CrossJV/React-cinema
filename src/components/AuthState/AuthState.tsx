@@ -1,10 +1,10 @@
 import styles from './AuthState.module.css';
 import { useContext } from 'react';
-import { UserContext } from '../../contexts/user.context';
+import { MainContext } from '../../contexts/main.context';
 import { Link } from 'react-router-dom';
 
 function AuthState() {
-	const { user, setUser } = useContext(UserContext);
+	const { user, setUser } = useContext(MainContext);
 
 	const auth = () => {
 		if(user) {

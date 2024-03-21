@@ -7,7 +7,6 @@
     gap: 16px;
 }
 
-a,
 .auth-state-toggler,
 .nav-header-link {
     color: rgb(168, 174, 191);
@@ -21,6 +20,15 @@ a,
     gap: 8px;
     text-decoration: none;
     cursor: pointer;
+}
+
+a {
+    color: rgb(168, 174, 191);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 2%;
+    text-align: left;
 }
 
 .nav-header-link:hover {
