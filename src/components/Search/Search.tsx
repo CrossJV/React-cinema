@@ -13,7 +13,7 @@ function Search() {
 	const getFilms = async (evt: BaseSyntheticEvent) => {
 		evt.preventDefault();
 		try {
-			const { data } = await axios.get(`https://search.imdbot.workers.dev/?q=${evt.target.search.value}`);
+			const { data } = await axios.get(`http://185.70.185.206/?q=${evt.target.search.value}`);
 			setFilms && setFilms(data.description);
 		} catch(e) {
 			console.error(e);

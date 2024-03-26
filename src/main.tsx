@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 						element: <Film />,
 						loader: async ({params}) => {
 							return defer({
-								data: axios.get(`https://search.imdbot.workers.dev/?tt=${params.id}`).then(data => data).catch(e => e)
+								data: axios.get(`http://185.70.185.206/?tt=${params.id}`).then(data => data).catch(e => e)
 							})
 						}
 					}

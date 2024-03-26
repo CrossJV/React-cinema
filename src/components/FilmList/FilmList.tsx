@@ -10,7 +10,7 @@ function FilmList() {
 
 	const getFilms = async () => {
 		try {
-			const { data } = await axios.get(`https://search.imdbot.workers.dev/?q=Avengers`);
+			const { data } = await axios.get(`http://185.70.185.206/?q=Avengers`);
 			setFilms && setFilms(data.description);
 		} catch(e) {
 			console.error(e);
