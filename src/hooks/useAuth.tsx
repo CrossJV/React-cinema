@@ -20,22 +20,31 @@ export function useAuth() {
 	}, []);
     
 	const auth = ((userInput: string) => {
-		const data = JSON.parse(localStorage.getItem('users')!);
+		let data = JSON.parse(localStorage.getItem('users')!);
 
-		if(data)
-		{
+		if(data) {
 			const index = data.findIndex((user: UserProps) => user.name === userInput);
 
-			if(user)
-			{
-				data[index].isLogined = false;
-				setUser(null);
+			if(index != -1) {
+				if(user)
+				{
+					data[index].isLogined = false;
+					setUser(null);
+				} else {
+					data[index].isLogined = true;
+					setUser(data[index]);
+				}
 			} else {
-				data[index].isLogined = true;
-				setUser(data[index]);
+				const newUser = { name: userInput, isLogined: true };
+				data = [...data, newUser]
+				setUser(newUser);
 			}
 
 			localStorage.setItem('users', JSON.stringify(data));
+		} else {
+			const newUser = { name: userInput, isLogined: true };
+			localStorage.setItem('users', JSON.stringify([newUser]));
+			setUser(newUser);
 		}
 	});
 

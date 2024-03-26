@@ -8,13 +8,13 @@ import { FilmCardProps } from './FilmCard.props';
 function FilmCard(data: FilmCardProps) {
 	return (
 		<li className={styles['film-card']}>
-			<Link to={`/film/${data.id}`}>
+			<Link to={`/film/${data['#IMDB_ID']}`}>
 			<div className={styles['poster-wrapper']}>
-				{!!data.rating && <Rating rating={data.rating} />}
-				<img className={styles['poster-image']} src={data.poster || '/no_image.svg'} alt={data.name || 'no_image'} />
+				{!!data['#RANK'] && <Rating rating={data['#RANK']} />}
+				<img className={styles['poster-image']} src={data['#IMG_POSTER'] || '/no_image.svg'} alt={data['#TITLE'] || 'no_image'} />
 			</div>
 			<div className={styles['description-wrapper']}>
-				<Paragraph className={'film-name'}>{data.name || ''}</Paragraph>
+				<Paragraph className={'film-name'}>{data['#TITLE'] || ''}</Paragraph>
 				<Favorite 
 					isFavorite={data.favorites || false}
 					onClick={() => console.log('favorite push')}

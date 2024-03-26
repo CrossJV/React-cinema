@@ -3,26 +3,34 @@ import Input from '../Input/Input';
 import Button from '../Button/Button';
 import Headler from '../Headler/Headler';
 import Paragraph from '../Paragraph/Paragraph';
-import { BaseSyntheticEvent } from 'react';
+import { BaseSyntheticEvent, useContext } from 'react';
+import axios from 'axios';
+import { MainContext } from '../../contexts/main.context';
 
 function Search() {
-	const formHandler = (evt: BaseSyntheticEvent) => {
+	const { setFilms } = useContext(MainContext);
+
+	const getFilms = async (evt: BaseSyntheticEvent) => {
 		evt.preventDefault();
-		console.log('search');
+		try {
+			const { data } = await axios.get(`http://185.70.185.206/?q=${evt.target.search.value}`);
+			setFilms && setFilms(data.description);
+		} catch(e) {
+			console.error(e);
+		}
 	};
 
 	return (
 		<>
 			<Headler className={'regular-headler'}>Поиск</Headler>
 			<Paragraph className={'regular-paragraph'}>Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.</Paragraph>
-			<form className={styles['search-form']} action="#" onSubmit={formHandler}>
+			<form className={styles['search-form']} action="#" onSubmit={getFilms}>
 				<Input 
 					className={'search'}
 					placeholder={'Искать'}
 					name={'search'}
 				/>
 				<Button 
-					onClick={() => {console.log('Искать');}}
 					className={'regular-button'}
 				>Искать</Button>
 			</form>

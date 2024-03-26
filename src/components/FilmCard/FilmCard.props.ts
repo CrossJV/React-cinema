@@ -1,7 +1,12 @@
+const ID = '#IMDB_ID';
+const TITLE = '#TITLE';
+const RATING = '#RANK';
+const POSTER = '#IMG_POSTER';
+
 export interface FilmCardProps {
-    id: number
-    name: string
-    rating: number
-    poster: string
+    [ID]: string
+    [TITLE]: string
+    [RATING]: number
+    [POSTER]: string
     favorites: boolean
 }
