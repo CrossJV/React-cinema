@@ -72,15 +72,16 @@ function Film() {
                                 {
                                     data.featuredReviews.edges && data.featuredReviews.edges.map(elem => {
                                         return (
-                                        <div className={cn(styles['film-card-title'])}>
-                                            <div className={cn(styles['film-card-reviews-title'])}>
-                                                <span className={cn(styles['film-card-reviews-title-name'])}>{elem.node.summary.originalText}</span>
-                                                <span className={cn(styles['film-card-reviews-title-date'])}>{elem.node.submissionDate}</span>
+                                            <div className={cn(styles['film-card-title'])} key={elem.node.author.nickName}>
+                                                <div className={cn(styles['film-card-reviews-title'])}>
+                                                    <span className={cn(styles['film-card-reviews-title-name'])}>{elem.node.summary.originalText}</span>
+                                                    <span className={cn(styles['film-card-reviews-title-date'])}>{elem.node.submissionDate}</span>
+                                                </div>
+                                                <div className={cn(styles['film-card-reviews-review'])}>
+                                                    {elem.node.text.originalText.plainText}
+                                                </div>
                                             </div>
-                                            <div className={cn(styles['film-card-reviews-review'])}>
-                                                {elem.node.text.originalText.plainText}
-                                            </div>
-                                        </div>)
+                                        )
                                     })
                                 } 
                             </div>
