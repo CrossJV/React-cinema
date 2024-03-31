@@ -5,7 +5,7 @@
     line-height: 24px;
     color: #8E95A9;
     margin-bottom: 24px;
-    width: 588px;
+    max-width: 588px;
 }
 
 .film-name {
@@ -14,9 +14,15 @@
     font-weight: 600;
     line-height: 24px;
     text-align: left;
-    margin-bottom: 16px;
 }
 
 .error-paragraph {
     text-align: center;
+}
+
+.film-card-description-text {
+    color: rgb(142, 149, 169);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
 }

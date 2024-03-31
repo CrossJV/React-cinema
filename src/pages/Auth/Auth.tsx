@@ -2,18 +2,20 @@ import styles from './Auth.module.css';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import Headler from '../../components/Headler/Headler';
-import { BaseSyntheticEvent, useContext, useState } from 'react';
-import { MainContext } from '../../contexts/main.context';
+import { BaseSyntheticEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AppDispath } from '../../store/store';
+import { userActions } from '../../store/user.slice';
 
 function Auth() {
 	const [userName, setUserName] = useState('');
 	const navigate = useNavigate();
-	const { setUser } = useContext(MainContext);
+	const dispatch = useDispatch<AppDispath>();
 	
 	const formHandler = (evt: BaseSyntheticEvent) => {
 		evt.preventDefault();
-		setUser && setUser(userName);
+		dispatch(userActions.login(userName))
 		navigate('/');
 	};
 

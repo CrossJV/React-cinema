@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Navigate } from "react-router";
-import { UserProps } from "../hooks/User.props";
+import { UserProps } from "../interfaces/User.props";
 
 export const RequireSign = ({ children }: {children: ReactNode}) => {
     const data = JSON.parse(localStorage.getItem('users')!);

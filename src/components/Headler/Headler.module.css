@@ -6,3 +6,10 @@
     font-weight: 600;
     margin-bottom: 16px;
 }
+
+.film-card-title-headler {
+    color: rgb(235, 238, 245);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+}

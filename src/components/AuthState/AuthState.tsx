@@ -1,14 +1,16 @@
 import styles from './AuthState.module.css';
-import { useContext } from 'react';
-import { MainContext } from '../../contexts/main.context';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispath, RootState } from '../../store/store';
+import { userActions } from '../../store/user.slice';
 
 function AuthState() {
-	const { user, setUser } = useContext(MainContext);
+	const user = useSelector((s: RootState) => s.user.user);
+	const dispatch = useDispatch<AppDispath>();
 
 	const auth = () => {
 		if(user) {
-			setUser && setUser(user.name);
+			dispatch(userActions.logout())
 		}
 	};
 
