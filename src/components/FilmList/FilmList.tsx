@@ -11,8 +11,10 @@ function FilmList() {
 	const films = useSelector((s: RootState) => s.films.films);
 
 	useEffect(() => {
-		dispatch(getFilms('batman'))
-	}, [dispatch])
+		if(!films.length) {
+			dispatch(getFilms('batman'))
+		}
+	}, [])
 
 	if(films) {
 		if(!films.length) {
