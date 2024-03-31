@@ -13,6 +13,8 @@
     padding: 0;
     padding-left: 32px;
     background: url('/like.svg') no-repeat;
+    align-self: start;
+    margin-left: 8px;
 }
 
 .is-favorite {

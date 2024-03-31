@@ -10,6 +10,7 @@
     align-items: center;
     padding: 8px 8px 16px 8px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .poster-wrapper{
@@ -22,8 +23,6 @@
     width: 266px;
     height: 400px;
 }
-
-
 
 .description-wrapper {
     padding: 8px;

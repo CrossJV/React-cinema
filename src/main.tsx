@@ -11,6 +11,9 @@ import axios from 'axios';
 import MainLayout from './layouts/Main/Main.tsx';
 import { RequireSign } from './helpers/RequireSign.tsx';
 import AuthLayout from './layouts/Auth/AuthLayout.tsx';
+import { HEADERS } from './helpers/Api.ts';
+import { Provider } from 'react-redux';
+import { mainStore } from './store/store.ts';
 
 const router = createBrowserRouter([
 	{
@@ -33,8 +36,14 @@ const router = createBrowserRouter([
 						path: '/film/:id',
 						element: <Film />,
 						loader: async ({params}) => {
+							const options = {
+								method: 'GET',
+								url: 'https://imdb146.p.rapidapi.com/v1/title/',
+								params: {id: params.id},
+								headers: HEADERS
+							};
 							return defer({
-								data: axios.get(`http://185.70.185.206/?tt=${params.id}`).then(data => data).catch(e => e)
+								data: axios.request(options).then(data => data).catch(e => e)
 							})
 						}
 					}
@@ -55,6 +64,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<Provider store={mainStore}>
+			<RouterProvider router={router} />
+		</Provider>
+		
 	</React.StrictMode>
 );

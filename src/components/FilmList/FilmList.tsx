@@ -1,37 +1,29 @@
 import styles from './FilmList.module.css';
 import FilmCard from '../FilmCard/FilmCard';
 import { FilmCardProps } from '../FilmCard/FilmCard.props';
-import { useContext, useEffect } from 'react';
-import { MainContext } from '../../contexts/main.context';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispath, RootState } from '../../store/store';
+import { getFilms } from '../../store/films.slice';
 
 function FilmList() {
-	const { films, setFilms } = useContext(MainContext);
-
-	const getFilms = async () => {
-		try {
-			const { data } = await axios.get(`http://185.70.185.206/?q=Avengers`);
-			setFilms && setFilms(data.description);
-		} catch(e) {
-			console.error(e);
-			return;
-		}
-	};
+	const dispatch = useDispatch<AppDispath>();
+	const films = useSelector((s: RootState) => s.films.films);
 
 	useEffect(() => {
-		getFilms();
-	}, [])
-	
+		dispatch(getFilms('batman'))
+	}, [dispatch])
+
 	if(films) {
 		if(!films.length) {
 			return <p>Фильмов не найдено</p>;
 		}
-	
+		
 		return (
 			<ul className={styles['film-list']}>
 				{films.map((elem: FilmCardProps) => {
 					return (
-						<FilmCard {...elem} key={elem['#IMDB_ID']}/>
+						<FilmCard {...elem} key={elem.id}/>
 					);
 				})}
 			</ul>
